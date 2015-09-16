@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Sidebar Transitions</title>
+		<meta name="description" content="Sidebar Transitions: Transition effects for off-canvas views" />
+		<meta name="keywords" content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+
+		<link rel="stylesheet" href="css/reset.css">
+	    <link rel="stylesheet" href="css/style.css">
+	    <script src="js/modernizr.js"></script>
+	    <style>
+	    	.codrops-header {
+				margin: 0 auto 3em;
+				padding: 3em 3em 0em 3em;
+				text-align: center;
+			}
+			#widgets {
+				position: fixed;
+				margin-left: 37%;
+			}
+			#description {
+				position: absolute;
+				width: 280px;
+				z-index: 10;
+				top: 70px;
+				/*border-bottom: 1px solid #ddd;*/
+				padding-top: 3px;
+				font-size: 12px;
+			}
+	    </style>
+	</head>
+	<body>
+		<div id="st-container" class="st-container">
+			<!-- 	
+				example menus 
+				these menus will be on top of the push wrapper
+			-->
+			<nav class="st-menu st-effect-4" id="menu-4">
+				<h2>Menu</h2>
+				<ul>
+					<li><a class="icon icon-world" href="index.html">Project Overview</a></li>
+					<li><a class="icon icon-arrow-right" href="questions.html">Our Questions</a></li>
+					<li><a class="icon icon-data" href="data.html">Our Data</a></li>
+					<li><a class="icon icon-search" href="exploratory.html">Exploratory Analysis</a></li>
+					<li><a class="icon icon-settings active" href="ebbinghaus.html">An Ebbinghaus Effect?</a></li>
+					<li><a class="icon icon-note" href="findings.html">Findings</a></li>
+				</ul>
+			</nav>
+
+			<!-- content push wrapper -->
+			<div class="st-pusher">
+				<div class="st-content"><!-- this is the wrapper for the content -->
+					<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+						<!-- Top Navigation -->
+						<div class="codrops-top clearfix">
+							<span class="right"><span>Data Science</span></span>
+						</div>
+						<header class="codrops-header">
+							<h1 class="icon icon-study">Spaced Learning Data Analysis<span>An Ebbinghaus Effect? [Scroll to Interact]</span></h1>
+							<div id="st-trigger-effects" class="slide"><button data-effect="st-effect-4">Menu</button></div>
+						</header>
+						<div class="main clearfix">
+							<div id="chart">
+								<svg>
+								</svg>
+							</div>
+							<div id="widgets">
+								<div id="description">
+									<p>By observing the proportion of recall scores that are 5 against the time elapsed, it should be the case that the overall slope decreases given more repetition if our data fits with an Ebbinghaus model. It is observed the slope does decrease between 0, 1, and 2 repetitions.</p>
+								</div>
+								<div id="menu">
+								</div>
+								<div id="info">
+								</div>
+							</div>
+						</div><!-- /main -->
+					</div><!-- /st-content-inner -->
+				</div><!-- /st-content -->
+			</div><!-- /st-pusher -->
+		</div><!-- /st-container -->
+		<script src="js/classie.js"></script>
+		<script src="js/sidebarEffects.js"></script>
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/d3.v3.min.js"></script>
+		<script src="js/underscore-min.js"></script>
+	    <script type="text/javascript">
+	      Modernizr.load({
+	        test: Modernizr.svg,
+	        yep: 'js/temperature.js',
+	        nope: ['js/jquery-1.10.2.min.js', 'js/fallback.js']
+	      });
+	    </script>
+	</body>
+</html>

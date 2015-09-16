@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Spaced Learning Data Analysis</title>
+		<meta name="description" content="Sidebar Transitions: Transition effects for off-canvas views" />
+		<meta name="keywords" content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+
+		<link rel="stylesheet" href="css/reset.css">
+	    <link rel="stylesheet" href="css/style.css">
+	    <style>
+	    	.slide{
+	    		position:fixed;
+	    		left: 47%;
+	    		z-index:999;
+	    	}
+	    	.spacer{
+	    		margin-bottom:400px;
+	    	}
+	    	.quoteblock {
+	    		margin-left:20px;
+	    		margin-right:20px;
+	    		font-size:0.8em;
+	    	}
+	    	i {
+				font-style: italic;
+	    	}
+	    	b {
+	    		font-weight:bold;
+	    	}
+	    	.spacer_50{
+	    		margin-bottom:50px;
+	    	}
+	    	.spacer_100{
+	    		margin-bottom:100px;
+	    	}
+	    	.spacer_200{
+	    		margin-bottom:200px;
+	    	}
+	    	.spacer_600{
+	    		margin-bottom:600px;
+	    	}
+
+	    </style>
+	</head>
+	<body>
+		<div id="st-container" class="st-container">
+			<!-- 	
+				example menus 
+				these menus will be on top of the push wrapper
+			-->
+
+			<nav class="st-menu st-effect-4" id="menu-4">
+				<h2>Menu</h2>
+				<ul>
+					<li><a class="icon icon-world" href="index.html">Project Overview</a></li>
+					<li><a class="icon icon-arrow-right" href="questions.html">Our Questions</a></li>
+					<li><a class="icon icon-data" href="data.html">Our Data</a></li>
+					<li><a class="icon icon-search active" href="exploratory.html">Exploratory Analysis</a></li>
+					<li><a class="icon icon-settings" href="ebbinghaus.html">An Ebbinghaus Effect?</a></li>
+					<li><a class="icon icon-note" href="findings.html">Findings</a></li>
+				</ul>
+			</nav>
+
+			<!-- content push wrapper -->
+			<div class="st-pusher">
+				<!-- 	
+					example menus 
+					these menus will be under the push wrapper
+				-->
+
+				<div class="st-content"><!-- this is the wrapper for the content -->
+					<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+						<!-- Top Navigation -->
+						<div class="codrops-top clearfix">
+							<span class="right"><span>Data Science</span></span>
+						</div>
+						<header class="codrops-header">
+							<h1 class="icon icon-study">Spaced Learning Data Analysis<span>Exploratory Analysis</span></h1>
+							<div id="st-trigger-effects" class="slide"><button data-effect="st-effect-4">Menu</button></div>
+						</header>
+						<div class="main clearfix">
+
+							<div class="column">
+								<br/><br/>
+								<img src="images/exp1.png">
+								<br/><br/>
+								<br/><br/>
+								<img src="images/exp2.png">
+								<br/><br/>
+								<br/><br/>
+								<img src="images/exp3.png">
+								<br/><br/>
+								<br/><br/>
+								<img src="images/exp4.png">
+								<br/><br/>
+								<br/><br/>
+								<img src="images/exp5.png">
+								<br/><br/>
+								<br/><br/>
+								<img src="images/exp6.png">
+								<br/><br/>
+								<br/><br/>
+								<div class="spacer_100"></div>
+								<img src="images/exp7.png">
+								<br/><br/>
+								<br/><br/>
+								<img src="images/exp8.png">
+								<img src="images/exp9.png">
+								<br/><br/>
+								<img src="images/ebbinghaus.png">
+
+							</div>
+							<div class="column">
+								<h2>Exploratory Analysis</h2>
+								<p></p>
+
+								<p>At first the above graph was very confusing. It didn't make sense that user average scores showed little improvement and even deterioration with the number of reviews done. However, as displayed adjacently, each review number has a different number of questions done. In the above we made lists that include review scores for all questions. However, as we will show below and as the x tick labels above indicate, there are more questions done with fewer reviews than questions done with more reviews.</p>
+
+								<div class="spacer_100"></div>
+								<br/><br/>
+								<br/><br/>
+								<br/><br/>
+
+
+								<p>Instead of looking at all of questions done that have a given number of reviews, we will look only at questions done that users have reviewed an exact number of times. For example, in the adjacent graph, questions were included in the 1 column if a user reviewed a question once or more. Now we will make a graph where number of questions done in the 1 column are only questions that a user has seen exactly once.</p>
+
+								<div class="spacer_200"></div>
+
+								<p>Intuitively it is now makes more sense when looking at improvement to look at questions that have all been reviewed the same number of times. We want to include only the same questions and the same users. Below we filter for recall_score count to equal 5 we can see marked improvement between each review with smaller variance. Also, we notice that the average for the first review was less than before.</p>
+
+								<div class="spacer_600"></div>
+
+								<p>Here we can see an upward trend with review number. Interestingly, the average score is initially lower when filtering for questions that have been reviewed exactly 5 times and the variances within reviews is smaller.</p>
+
+								<p>The ratings by review number are correlated as indicated by the very small p-values. The correlation between review number and review score seems to have a moderate uphill relationship as indicated by the increasing pearson correlations. It is important to consider that this includes reviews for all the users in the data set who have answered a question exactly 5 times. It also does not incorporate differences in time between reviews. We will repeat the above for questions that have been reviewed exactly 9 times below.</p>
+
+								<div class="spacer_50"></div>
+								<br/><br/>
+
+								<p>It's interesting that questions that have been reviewed more have a lower initial review score. This makes sense though because you should be reviewing a question more if you don't know it well initially. The improvement between reviews looks linear. It's also interesting that the final review for a question, whether you reviewed it 5 times or 9 times has an average score around 4.</p>
+
+								<p>The improvement with number of reviews is interesting but also to be expected. If such improvement were not occurring then there might be a problem with Firecracker or its users.</p> 
+
+								<p>Firecracker's flash cards are categorized as either 'recall' or 'choice'. A potential problem with using a recall based flash card system is that users may be biased in the way that they self report their recall scores. Studies have shown that self reported data using rating scales tends to be closer to the middle perhaps to make people look less extreme. We can only guess about the underlying reasons for biases in self reported recall scores but it may be interesting to compare average recall scores for recall and choice questions. While users still rate choice questions on a scale from 1 to 5, choice questions give an objective answer as to whether the user was correct or incorrect.</p>
+
+								<p>Now we have a good idea of how average user scores change with the number of questions done. Our data includes many categorical variables. The categorical variables for questions are topic, sub_subject, subject, and category. The categorical variable for users is institution_id. Before we begin slicing the data in too many ways we'd like to get a sense of average scores for questions, topics, sub_subjects, and subjects. Because users answer questions multiple times we will start out by only using the first time a user has answered a question.</p>
+
+								<div class="spacer_100"></div>
+								<br/><br/>
+
+								<p>The highest question averages are around twice as high as the lowest question averages. This indicates that some questions are significantly harder than others. So we need to be careful when comparing users who have answered different questions.</p>
+
+								<div class="spacer_100"></div>
+
+								<p>Initial score variance across subjects is less than initial score variance across questions. For our models we will incorporate question difficulty but will not incorporate variances in difficulty using broader categorizations of questions.</p>
+
+								<div class="spacer_100"></div>
+								<h2>Ebbinghaus Forgetting Curve</h2>
+								<p></p>
+								<p>Before we move on to developing predictive models, we wanted to plot user recalls for a given question over time for a few of our users because our predictive models are based on the <a href="http://en.wikipedia.org/wiki/Forgetting_curve" target="_blank">Ebbinghaus forgetting curve</a>.</p>
+								
+
+							</div>
+							<div class="info">
+							</div>
+							<div class="spacer"></div>
+						</div><!-- /main -->
+					</div><!-- /st-content-inner -->
+				</div><!-- /st-content -->
+			</div><!-- /st-pusher -->
+		</div><!-- /st-container -->
+		<script src="js/classie.js"></script>
+		<script src="js/sidebarEffects.js"></script>
+	</body>
+</html>

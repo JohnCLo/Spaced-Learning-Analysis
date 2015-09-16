@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Spaced Learning Data Analysis</title>
+		<meta name="description" content="Sidebar Transitions: Transition effects for off-canvas views" />
+		<meta name="keywords" content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+
+		<link rel="stylesheet" href="css/reset.css">
+	    <link rel="stylesheet" href="css/style.css">
+	    <style>
+	    	.slide{
+	    		position:fixed;
+	    		left: 47%;
+	    		z-index:999;
+	    	}
+	    	.spacer{
+	    		margin-bottom:400px;
+	    	}
+	    	.quoteblock {
+	    		margin-left:20px;
+	    		margin-right:20px;
+	    		font-size:0.8em;
+	    	}
+	    	i {
+				font-style: italic;
+	    	}
+	    	b {
+	    		font-weight:bold;
+	    	}
+	    	.spacer_50{
+	    		margin-bottom:50px;
+	    	}
+	    	.spacer_100{
+	    		margin-bottom:100px;
+	    	}
+	    	.spacer_200{
+	    		margin-bottom:200px;
+	    	}
+
+	    </style>
+	</head>
+	<body>
+		<div id="st-container" class="st-container">
+			<!-- 	
+				example menus 
+				these menus will be on top of the push wrapper
+			-->
+
+			<nav class="st-menu st-effect-4" id="menu-4">
+				<h2>Menu</h2>
+				<ul>
+					<li><a class="icon icon-world" href="index.html">Project Overview</a></li>
+					<li><a class="icon icon-arrow-right" href="questions.html">Our Questions</a></li>
+					<li><a class="icon icon-data active" href="data.html">Our Data</a></li>
+					<li><a class="icon icon-search" href="exploratory.html">Exploratory Analysis</a></li>
+					<li><a class="icon icon-settings" href="ebbinghaus.html">An Ebbinghaus Effect?</a></li>
+					<li><a class="icon icon-note" href="findings.html">Findings</a></li>
+				</ul>
+			</nav>
+
+			<!-- content push wrapper -->
+			<div class="st-pusher">
+				<!-- 	
+					example menus 
+					these menus will be under the push wrapper
+				-->
+
+				<div class="st-content"><!-- this is the wrapper for the content -->
+					<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+						<!-- Top Navigation -->
+						<div class="codrops-top clearfix">
+							<span class="right"><span>Data Science</a></span></span>
+						</div>
+						<header class="codrops-header">
+							<h1 class="icon icon-study">Spaced Learning Data Analysis<span>Our Data</span></h1>
+							<div id="st-trigger-effects" class="slide"><button data-effect="st-effect-4">Menu</button></div>
+						</header>
+						<div class="main clearfix">
+
+							<div class="column">
+								<div class="quoteblock">
+									<br/>
+									<br/>
+									<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+									<h2>Firecracker Terms of Service and Privacy Policy</h2>
+									<br/>
+									<p><b>Conditions Under Which We Share Information and Aggregate Information (Non-Personally Identifiable)</b></p>
+
+									<p><i>Firecracker holds the right to share aggregated demographic information about our user base with our partners. This information does not identify individual users. We do not link aggregate user data with personally identifiable information. In addition, data may be aggregated regarding assessment of your performance based on various measures to create generalized data regarding use of our platform. We may use and publicize such aggregate information on any basis that does not identify you, without your consent. Your contributions or notes to a module, forum, or other service on our website (“Contribution”) may also be aggregated and made publicly available. Your Contributions may be aggregated according to their registration and login status.</i></p>
+
+									<p><b>Personally Identifiable Information</b></p>
+
+									<p><i>Except as discussed in this Privacy Policy, we do not share personally identifiable information with third parties.</i></p>
+									<br/>
+								</div>
+
+								<div class="spacer_50"></div>
+								<br/>
+
+								<img src="images/recalls1.png">
+								<br/><br/>
+								<img src="images/recalls2.png">
+								<br/><br/>
+								<br/><br/>
+								
+								<img src="images/data1.png">
+								<br/><br/>
+								<img src="images/data2.png">
+								<br/><br/>
+								<img src="images/data4.png">
+								<br/><br/>
+								<img src="images/data5.png">
+
+							</div>
+							<div class="column">
+								<h2>Data</h2>
+								<p></p>
+
+								<p>The data we used in this project was provided by the VP of Engineering at Firecracker, Tony Wieczorek. The information provided is proprietary and confidential and is cannot be shared outside of our group and the class instructors. As stated in Firecracker's <a href='http://med.firecracker.me/privacy'>privacy policy</a>.</p>
+
+								<p>In accordance with Firecracker's terms of service and privacy policy, user emails were deleted from the data, user ids were replaced with random unique strings, and school names were replaced with institution ids. Getting this data required hassling the VP of Engineering who was very busy with other projects and was reluctant to share such a large amount of user information. After many phone calls, emails, and visits to Firecracker's office we were eventually able to obtain a large data set from Firecracker that included entire user recall histories. We also had multiple discussions with the CEO of Firecracker, Ben Williams, about which areas of the data we should explore.</p>
+
+								<p>The data came in the form of two CSV spreadsheets which required a decent amount of cleaning and formatting before we began data exploration.</p>
+
+								<p>We first import some libraries and define useful functions. This code was taken almost entirely from the homework assignments.</p>
+
+								<br/>
+								<br/>
+
+								<h2>Data Munging</h2>
+								<p></p>
+								<p>We imported a CSV that included all of the question answers for a large number of users and a CSV that included relevant information about the topics that each question belonged to.</p>
+
+								<p>We performed a large amount of initial exploration to get a sense of the data. There are many ways we can slice the data. For example we could look at how user scores change with the number of times they have seen the question, how user scores change with the time since they last saw the question, how scores change by question type, and how different institutions perform on different subjects among many other things. But before that we needed to get a sense of the data and how we could use it.</p>
+								<br/><br/>
+								<div class="spacer_200"></div>
+								<p>We wanted to compare performance across users so we looked at average user scores.</p>
+
+								<p>Clearly we need to do some filtering on the users. The large bins exactly on 1, 2, 4, and 5 suggest users who have not answered many questions and thus have an integer average recall score.</p>
+
+								<div class="spacer_200"></div>
+
+
+								<p>A large number of users have answered less than 50 questions. If we look at average recall scores for users who have answered over 50 questions and plot a histogram like before, we get the following chart.</p>
+
+								<div class="spacer_200"></div>
+								<div class="spacer_200"></div>
+								<br/><br/>
+								<br/><br/>
+
+								<p>If we filter for users who have answered over 100 questions, then we now have 566 of our 1594 total users. As we can see above, there are still a couple users with average scores exactly equal to 1 and 5 even with over 100 questions answered. We will remove these outliers because it is very unlikely that a user always knows the answer to a question perfectly or always does not know the answer at all when they have done over 100 questions. Also, it is interesting that the histogram of user average scores looks somewhat normally distributed. We expected the distribution of average scores to be centered around a 3 because Firecracker is supposed to schedule users to review a question when they are at risk of forgetting it, which would be at a score range of 3.</p>
+
+								<div class="spacer_50"></div>
+
+								<p>As we can see, our filtered data set is not much smaller. It is now 982,225 rows of the total 1,008,820 rows.</p>
+
+								<p>Now that we've done some filtering on our data and have a sense for the number of users, number of questions, and user recall score averages, let's look at how average user scores change with the number of times they have seen a question. We are expecting an upward trend with recall score average and the number of times a question has been seen.</p>
+								
+
+							</div>
+							<div class="info">
+							</div>
+							<div class="spacer"></div>
+						</div><!-- /main -->
+					</div><!-- /st-content-inner -->
+				</div><!-- /st-content -->
+			</div><!-- /st-pusher -->
+		</div><!-- /st-container -->
+		<script src="js/classie.js"></script>
+		<script src="js/sidebarEffects.js"></script>
+	</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Spaced Learning Data Analysis</title>
+		<meta name="description" content="Sidebar Transitions: Transition effects for off-canvas views" />
+		<meta name="keywords" content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+
+		<link rel="stylesheet" href="css/reset.css">
+	    <link rel="stylesheet" href="css/style.css">
+	    <style>
+	    	.slide{
+	    		position:fixed;
+	    		left: 47%;
+	    		z-index:999;
+	    	}
+	    	.spacer{
+	    		margin-bottom:400px;
+	    	}
+	    </style>
+	</head>
+	<body>
+		<div id="st-container" class="st-container">
+			<!-- 	
+				example menus 
+				these menus will be on top of the push wrapper
+			-->
+
+			<nav class="st-menu st-effect-4" id="menu-4">
+				<h2>Menu</h2>
+				<ul>
+					<li><a class="icon icon-world active" href="index.html">Project Overview</a></li>
+					<li><a class="icon icon-arrow-right" href="questions.html">Our Questions</a></li>
+					<li><a class="icon icon-data" href="data.html">Our Data</a></li>
+					<li><a class="icon icon-search" href="exploratory.html">Exploratory Analysis</a></li>
+					<li><a class="icon icon-settings" href="ebbinghaus.html">An Ebbinghaus Effect?</a></li>
+					<li><a class="icon icon-note" href="findings.html">Findings</a></li>
+				</ul>
+			</nav>
+
+			<!-- content push wrapper -->
+			<div class="st-pusher">
+				<!-- 	
+					example menus 
+					these menus will be under the push wrapper
+				-->
+
+				<div class="st-content"><!-- this is the wrapper for the content -->
+					<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+						<!-- Top Navigation -->
+						<div class="codrops-top clearfix">
+							<span class="right"><span>Data Science</span></span>
+						</div>
+						<header class="codrops-header">
+							<h1 class="icon icon-study">Spaced Learning Data Analysis<span>Project Overview</span></h1>
+							<div id="st-trigger-effects" class="slide"><button data-effect="st-effect-4">Menu</button></div>
+						</header>
+						<div class="main clearfix">
+
+							<div class="column">
+								<iframe src="//player.vimeo.com/video/81784489?byline=0" width="500" height="280" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+								<br/><br/>
+								<br/><br/>
+
+								<p>For a more technical and substantial description of the project process please refer to the <a href="files/spacedlearning.ipynb">ipython notebook.</a></p>
+
+							</div>
+							<div class="column">
+								<h2>Background and Motivation</h2>
+								<p></p>
+
+								<p>The motivation behind the project was an interest in learning and memory science. Data was provided by Cambridge based startup called <a href='http://www.firecracker.me' target='_blank'> Firecracker</a>, an online learning platform for medical students. Firecracker helps its users prepare for medical exams, including the United States Medical Licensing Exam, by giving them access to content on each of the topics in these exams, quizzing them after they review material for the first time, and using a user's scores to create a customized review schedule.</p>
+								<p>The quiz questions follow a flash card system. Most quiz questions are 'recall' questions where the user self reports their mastery of that question on an integer scale from 1 to 5. A score of 1 denotes not remembering the answer to a question at all and a score of 5 denotes knowing an answer perfectly. As users review topics in Firecracker and flag them for quizzing, they receive new quiz questions relating to the material they reviewed.</p>
+								<p>Firecracker uses a user's review scores to create a customized review schedule. The review schedule is created using a spaced learning algorithm in order to optimize learning. For example, if a user scores a 1 on a question they are scheduled to see the question sooner than if they had scored a 5. The concept of spaced repetition is a learning technique that incorporates increasing intervals of time between subsequent reviews of previously learned material in order to exploit the psychological <a href='http://en.wikipedia.org/wiki/Spacing_effect' target='_blank'>spacing effect</a>. Our group was especially interested in exploring data for the application of this learning technique in a real world environment.</p>
+
+								<br/>
+								<br/>
+
+
+							</div>
+							<div class="info">
+							</div>
+							<div class="spacer"></div>
+						</div><!-- /main -->
+					</div><!-- /st-content-inner -->
+				</div><!-- /st-content -->
+			</div><!-- /st-pusher -->
+		</div><!-- /st-container -->
+		<script src="js/classie.js"></script>
+		<script src="js/sidebarEffects.js"></script>
+	</body>
+</html>
